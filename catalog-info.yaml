@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: go-cmhdspie-gitops
+  description: This is GitOps manifest for go-cmhdspie   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=go-cmhdspie
+    backstage.io/kubernetes-id: go-cmhdspie 
+    backstage.io/techdocs-ref: dir:.
+    dev.azure.com/project-repo: chetna14manku-org/go-cmhdspie-gitops
+    dev.azure.com/project: shared-public
+    dev.azure.com/build-definition: chetna14manku-org.go-cmhdspie-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:go-cmhdspie
